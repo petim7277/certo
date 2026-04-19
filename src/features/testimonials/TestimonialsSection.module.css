@@ -1,0 +1,125 @@
+.testimonialsWrapper {
+    background-color: var(--primary-yellow);
+    padding: 5rem 0;
+    width: 100%;
+}
+
+.testimonialsTop {
+    padding: 0 5%;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    color: #02033B;
+}
+
+.cardsContainer {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 2rem 0;
+}
+
+.carouselTrack {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    padding-left: 2rem;
+    animation: scroll 40s linear infinite;
+}
+
+.cardsContainer:hover .carouselTrack {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-33.33% - 0.66rem));
+    }
+
+}
+
+.reviewCard {
+    background-color: white;
+    border-radius: 20px;
+    padding: 2rem;
+    min-width: 320px;
+    max-width: 350px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.stars {
+    color: var(--primary-yellow);
+    font-size: 20px;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.reviewText {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-main);
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+.author {
+    font-weight: 700;
+    font-size: 14px;
+    color: #02033B;
+}
+
+.featuredInWrapper {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+}
+
+.featuredText {
+    font-weight: 700;
+    font-size: 16px;
+    color: #02033B;
+}
+
+.logosRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+    flex-wrap: wrap;
+}
+
+.logosRow img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.logosRow img:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .featuredInWrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+}

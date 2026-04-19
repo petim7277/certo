@@ -1,0 +1,236 @@
+.heroOuterContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem 4% 2rem 8%;
+    background: #F3F8FF;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.contentSide {
+    flex: 1;
+    z-index: 10;
+    min-width: 0;
+}
+
+.contentSide h1 {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: clamp(2.5rem, 5.5vw, 4.8rem);
+    color: #02033B;
+    line-height: 1.1;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    color: #02033B;
+    margin-bottom: 3.5rem;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.imageSide {
+    flex: 1.5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.visualWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 750px;
+    aspect-ratio: 1 / 1;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visualWrapper::before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    right: 10px;
+    bottom: 10px;
+    border: 25px solid #4335DE;
+    background-color: #4335DE;
+    z-index: 1;
+    border-radius: 40px;
+}
+
+.orangeBox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #FFDE8A;
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.personImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mix-blend-mode: multiply;
+    opacity: 0.8;
+}
+
+.phoneImg {
+    position: absolute;
+    height: 70%;
+    width: auto;
+    z-index: 3;
+    left: -8%;
+    top: 50%;
+    transform: translate(0, -50%);
+    filter: drop-shadow(10px 20px 30px rgba(0, 0, 0, 0.4));
+    animation: floatPhone 6s ease-in-out infinite;
+}
+
+@keyframes floatPhone {
+    0% {
+        transform: translate(0, -50%);
+    }
+
+    50% {
+        transform: translate(0, -54%);
+    }
+
+    100% {
+        transform: translate(0, -50%);
+    }
+}
+
+.btn {
+    padding: 1.1rem 2.2rem;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btnPrimary {
+    background-color: #FFC043;
+    color: #02033B;
+}
+
+.btnSecondary {
+    background: none;
+    border-color: #02033B;
+    color: #02033B;
+}
+
+
+@media (min-width: 1600px) {
+    .visualWrapper {
+        max-width: 850px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .visualWrapper {
+        max-width: 550px;
+    }
+
+    .imageSide {
+        padding-left: 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .heroOuterContainer {
+        flex-direction: column;
+        padding: 6rem 5% 4rem 5%;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .contentSide {
+        margin-bottom: 5rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title {
+        white-space: normal;
+    }
+
+    .subtitle {
+        max-width: 100%;
+    }
+
+    .buttonGroup {
+        justify-content: center;
+    }
+
+    .imageSide {
+        width: 100%;
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    .visualWrapper {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .visualWrapper {
+        max-width: 90%;
+        margin-left: 15px;
+    }
+
+    .visualWrapper::before {
+        border-width: 15px;
+        top: -15px;
+        left: -15px;
+    }
+
+    .buttonGroup {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

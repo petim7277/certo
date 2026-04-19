@@ -1,10 +1,15 @@
+import React from "react";
 import {Outlet} from "react-router-dom";
-import NavbarSection from "../reuseables/navigation/NavBarSection";
+import Navbar from "../reuseables/navigation/NavBarSection";
+import Footer from "../reuseables/footer/FooterSection";
 const Layout = ()=>{
     return (
         <>
-            <NavbarSection/>
-            <Outlet/>
+            <Navbar/>
+            <div style={{ paddingTop: "7rem" }}>
+                <Outlet/>
+            </div>
+            <Footer/>
         </>
     )
 }

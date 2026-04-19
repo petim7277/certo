@@ -1,0 +1,247 @@
+.footerWrapper {
+    background-color: var(--dark-navy);
+    color: white;
+    padding: 6rem 5% 2rem;
+}
+
+.footerTop {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    margin-bottom: 5rem;
+    flex-wrap: wrap;
+}
+
+.brandCol {
+    flex: 2;
+    min-width: 280px;
+}
+
+.brandTitle {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+
+.socialIcons {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.socialIcons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.socialIcons a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.socialIcons img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1); /* Forces icons to be pure white */
+}
+
+.policyLinks {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.policyLinks a {
+    color: var(--text-muted);
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+.copyright, .credit {
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 300px;
+    margin-bottom: 0.5rem;
+}
+
+.linksCol {
+    flex: 1;
+    min-width: 150px;
+}
+
+.linksTitle {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.linksTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: white;
+}
+
+.linksList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.linksList li {
+    margin-bottom: 1.2rem;
+}
+
+.linksList a {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    padding-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.linksList a::before {
+    content: '-';
+    position: absolute;
+    left: 0;
+    color: var(--primary-yellow);
+}
+
+.linksList a:hover {
+    color: var(--primary-yellow);
+}
+
+.newsletterCol {
+    flex: 2;
+    min-width: 300px;
+}
+
+.newsletterCard {
+    background-color: var(--primary-yellow);
+    border-radius: 30px;
+    padding: 3rem 2rem;
+    color: #02033B;
+}
+
+.newsletterTitle {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.newsletterDesc {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.formGroup {
+    display: flex;
+    gap: 0.5rem;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 30px;
+}
+
+.input {
+    flex: 1;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    outline: none;
+    font-size: 14px;
+}
+
+.submitBtn {
+    background-color: #02033B;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submitBtn:hover {
+    background-color: var(--primary-blue);
+}
+
+.footerBottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+}
+
+.footerBottom p {
+    color: var(--text-muted);
+    font-size: 11px;
+    line-height: 1.8;
+    max-width: 800px;
+}
+
+@media (max-width: 900px) {
+    .footerTop {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .brandCol, .linksCol, .newsletterCol {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .socialIcons, .policyLinks {
+        justify-content: center;
+    }
+
+    .copyright, .credit {
+        max-width: 100%;
+    }
+
+    .linksList a {
+        padding-left: 0;
+    }
+
+    .linksList a::before {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .newsletterTitle {
+        font-size: 20px;
+    }
+
+    .newsletterCard {
+        padding: 2rem 1.5rem;
+    }
+
+    .formGroup {
+        flex-direction: column;
+        background: transparent;
+        padding: 0;
+    }
+
+    .input {
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .submitBtn {
+        width: 100%;
+        padding: 1rem;
+    }
+}

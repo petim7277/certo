@@ -1,0 +1,144 @@
+.pageWrapper {
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+.hero {
+    background-color: var(--primary-blue);
+    padding: 8rem 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.heroTitle {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 3rem;
+}
+
+.searchBar {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    border-radius: 30px;
+    padding: 0.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.searchBar input {
+    flex: 1;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 16px;
+    border-radius: 30px;
+    outline: none;
+    font-family: inherit;
+}
+
+.searchBar button {
+    background-color: var(--primary-yellow);
+    color: #02033B;
+    border: none;
+    padding: 0 2rem;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.searchBar button:hover {
+    background-color: var(--primary-yellow-hover);
+}
+
+.categories {
+    padding: 6rem 5%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #F8F9FA;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #eaeaea;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #02033B;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.contactSupport {
+    padding: 2rem 5% 8rem;
+    display: flex;
+    justify-content: center;
+}
+
+.contactCard {
+    background-color: var(--primary-yellow);
+    padding: 4rem;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+.contactCard h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #02033B;
+    margin-bottom: 1rem;
+}
+
+.contactCard p {
+    color: #02033B;
+    margin-bottom: 2.5rem;
+    font-size: 18px;
+}
+
+.btnPrimary {
+    background-color: #02033B;
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btnPrimary:hover {
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

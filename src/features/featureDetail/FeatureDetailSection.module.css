@@ -1,0 +1,127 @@
+.sectionWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8rem 5%;
+    gap: 4rem;
+    background-color: #ffffff;
+}
+
+.contentSide {
+    flex: 1;
+    max-width: 500px;
+}
+
+.title {
+    font-size: 38px;
+    font-weight: 800;
+    color: #02033B;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.description {
+    font-size: 18px;
+    color: var(--text-main);
+    line-height: 1.6;
+    margin-bottom: 3rem;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #02033B;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btnPrimary {
+    background-color: var(--primary-yellow);
+    color: #02033B;
+    border-color: var(--primary-yellow);
+}
+
+.btnPrimary:hover {
+    background-color: var(--primary-yellow-hover);
+    border-color: var(--primary-yellow-hover);
+}
+
+.btnSecondary {
+    background-color: transparent;
+    color: #02033B;
+}
+
+.btnSecondary:hover {
+    background-color: rgba(2, 3, 59, 0.05);
+}
+
+.imageSide {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.imageContainer {
+    position: relative;
+    max-width: 450px;
+    width: 100%;
+}
+
+.imageContainer::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    width: 80%;
+    height: 110%;
+    transform: translateY(-50%);
+    background-color: var(--primary-yellow);
+    z-index: 0;
+    border-radius: 0 40px 40px 0;
+}
+
+.imageContainer img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 900px) {
+    .sectionWrapper {
+        flex-direction: column;
+        padding: 5rem 5%;
+    }
+
+    .contentSide,
+    .imageContainer {
+        max-width: 100%;
+    }
+
+    .imageSide {
+        justify-content: center;
+        margin-top: 3rem;
+    }
+
+    .imageContainer::before {
+        right: auto;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 110%;
+        height: 80%;
+        border-radius: 40px;
+    }
+}
