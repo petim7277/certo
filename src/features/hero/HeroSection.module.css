@@ -1,23 +1,25 @@
-.heroOuterContainer {
-    display: flex;
+.heroContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    justify-content: space-between;
     width: 100%;
     min-height: 100vh;
-    padding: 2rem 4% 2rem 8%;
+    padding: 4rem 8%;
     background: #F3F8FF;
     overflow: hidden;
     box-sizing: border-box;
     position: relative;
+    max-width: 1800px;
+    margin: 0 auto;
+    gap: 6rem;
 }
 
-.contentSide {
-    flex: 1;
+.heroContent {
     z-index: 10;
     min-width: 0;
 }
 
-.contentSide h1 {
+.heroContent h1 {
     width: 100%;
     max-width: 100%;
     margin-top: 0;
@@ -25,11 +27,14 @@
 }
 
 .title {
-    font-size: clamp(2.5rem, 5.5vw, 4.8rem);
+    font-size: clamp(2.2rem, 4.5vw, 4.2rem);
+    /* Reduced size to prevent overlap */
     color: #02033B;
-    line-height: 1.1;
+    line-height: 1.2;
     font-weight: 800;
-    white-space: nowrap;
+    white-space: normal;
+    max-width: 600px;
+    word-break: break-word;
 }
 
 .subtitle {
@@ -46,19 +51,19 @@
     flex-wrap: wrap;
 }
 
-.imageSide {
-    flex: 1.5;
+.heroImage {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     position: relative;
-    padding-left: 2rem;
+    width: 100%;
+    padding-left: 10%;
 }
 
 .visualWrapper {
     position: relative;
     width: 100%;
-    max-width: 750px;
+    max-width: min(100%, 650px);
     aspect-ratio: 1 / 1;
     z-index: 5;
     display: flex;
@@ -151,7 +156,6 @@
     color: #02033B;
 }
 
-
 @media (min-width: 1600px) {
     .visualWrapper {
         max-width: 850px;
@@ -162,22 +166,19 @@
     .visualWrapper {
         max-width: 550px;
     }
-
-    .imageSide {
-        padding-left: 1rem;
-    }
 }
 
-@media (max-width: 1024px) {
-    .heroOuterContainer {
-        flex-direction: column;
-        padding: 6rem 5% 4rem 5%;
+@media (max-width: 1400px) {
+    .heroContainer {
+        grid-template-columns: 1fr;
+        padding: 5rem 5% 4rem 5%;
         text-align: center;
         min-height: auto;
+        gap: 3rem;
     }
 
-    .contentSide {
-        margin-bottom: 5rem;
+    .heroContent {
+        margin-bottom: 4rem;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -186,41 +187,53 @@
 
     .title {
         white-space: normal;
+        font-size: clamp(2.2rem, 8vw, 3.5rem);
     }
 
     .subtitle {
         max-width: 100%;
+        margin-bottom: 2.5rem;
     }
 
     .buttonGroup {
         justify-content: center;
     }
 
-    .imageSide {
+    .heroImage {
         width: 100%;
         justify-content: center;
         padding-left: 0;
     }
 
     .visualWrapper {
-        max-width: 500px;
+        max-width: 480px;
     }
 }
 
-@media (max-width: 480px) {
-    .title {
-        font-size: 2.5rem;
+@media (max-width: 600px) {
+    .heroContainer {
+        padding: 4rem 5% 3rem 5%;
     }
 
     .visualWrapper {
-        max-width: 90%;
-        margin-left: 15px;
+        max-width: 100%;
+        margin-left: 10px;
     }
 
     .visualWrapper::before {
         border-width: 15px;
         top: -15px;
         left: -15px;
+        border-radius: 30px;
+    }
+
+    .orangeBox {
+        border-radius: 20px;
+    }
+
+    .phoneImg {
+        height: 65%;
+        left: -5%;
     }
 
     .buttonGroup {
@@ -232,5 +245,16 @@
     .btn {
         width: 100%;
         justify-content: center;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
     }
 }
